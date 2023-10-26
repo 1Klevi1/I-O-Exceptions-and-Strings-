@@ -1,12 +1,9 @@
 package stream;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
-public class Collection {
+public class Collection implements Serializable {
     private ArrayList<Person> people = new ArrayList<Person>(200);
     private int min; // the minimum age
     private int max; // the maximum age
@@ -67,7 +64,31 @@ public class Collection {
         }
 
     }
-//    public void writeObjects(){  };
+    public void writeObjects(String fileName){
+        try {
+            FileOutputStream fileOut = new FileOutputStream(fileName);
+            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+
+            StringBuilder val = new StringBuilder("Minimum age: ");
+            val.append(fastMinAge());
+            val.append("\nMaximum age: ");
+            val.append(fastMaxAge());
+            val.append("\nAverage age: ");
+            val.append(fastAvgAge());
+            for (Person p : people){
+                val.append("\n").append(p.toString());
+            }
+            // Write the object to the file
+            objectOut.writeObject(val.toString());
+
+            // Close the streams
+            objectOut.close();
+            fileOut.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
     public void add(Person person) {
         people.add(person);
     }
