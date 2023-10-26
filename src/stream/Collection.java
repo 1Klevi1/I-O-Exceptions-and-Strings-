@@ -67,6 +67,7 @@ public class Collection {
         }
 
     }
+//    public void writeObjects(){  };
     public void add(Person person) {
         people.add(person);
     }
