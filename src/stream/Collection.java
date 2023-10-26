@@ -9,6 +9,9 @@ public class Collection implements Serializable {
     private int max; // the maximum age
     private int total;
 
+    private int minimumAge;
+    private int maximumAge ;
+    private double averageAge;
     public Collection() {
     }
 
@@ -41,6 +44,7 @@ public class Collection implements Serializable {
         }
         return (float)total / people.size();
     }
+
     public void writeToFile(String fileName){
 
 
@@ -64,6 +68,40 @@ public class Collection implements Serializable {
         }
 
     }
+//    public void readObjects(String fileName){
+//        try {
+//
+//            FileInputStream  fileIn = new FileInputStream(fileName);
+//            ObjectInputStream objectin = new ObjectInputStream(fileIn);
+//
+//            SeriliazeData.SerializedData data = (SeriliazeData.SerializedData) objectin.readObject();
+//
+//
+//             minimumAge = data.getMinimumAge();
+//             maximumAge = data.getMaximumAge();
+//             averageAge = data.getAvgAge();
+//
+//            String line = objectin.readLine();
+//            while ((line != null)){
+//
+//                String[] elements = line.split(";");
+//                String lastName = elements[0];
+//                String firstName = elements[1];
+//                int age = Integer.parseInt(elements[3].trim());
+//                Person p = new Person(firstName, lastName, age);
+//                add(p);
+//                line = objectin.readLine();
+//
+//            }
+//            // Close the streams
+//            objectin.close();
+//            fileIn.close();
+//            System.out.println("Successfully read the object ");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+
     public void writeObjects(String fileName){
         try {
             FileOutputStream fileOut = new FileOutputStream(fileName);

@@ -15,8 +15,9 @@ public class Main {
 //        System.out.println(c.fastMinAge());
 //        System.out.println(c.fastMaxAge());
 //        System.out.println(c.fastAvgAge());
-        c.writeToFile("peopleWritten.txt");
+//        c.writeToFile("peopleWritten.txt");
         c.writeObjects("testing.txt");
+//        c.readObjects("testing.txt");
     }
 
 

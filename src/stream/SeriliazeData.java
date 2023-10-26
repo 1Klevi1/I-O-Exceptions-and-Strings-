@@ -26,6 +26,12 @@ public class SeriliazeData {
         public int getMinimumAge() {
             return minimumAge;
         }
+        public int getMaximumAge(){
+            return maximumAge;
+        }
+        public double getAvgAge(){
+            return averageAge;
+        }
 
         // Repeat for the other fields
     }
