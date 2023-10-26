@@ -12,7 +12,9 @@ public class Person implements Serializable {
         this.lastName = lastName;
         this.age = age;
     }
+    public Person(){
 
+    }
     public String getFirstName() {
         return firstName;
     }
